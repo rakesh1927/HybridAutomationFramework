@@ -15,13 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    
-    - name: Install Google Chrome and dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y libxss1 libappindicator1 libgconf-2-4 libxi6 libgbm1
-
-   
     - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
@@ -29,12 +22,10 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    # Tip: If LambdaTest runs completely in the cloud, headless false is fine.
-    # Otherwise, for local runner fallback, switch to -DisHeadless=true
+    
     - name: Running test automation framework with maven
       run: mvn test -X -Dbrowser=chrome -DisLambdaTest=true -DisHeadless=false
 
-    
     - name: Upload Test logs
       if: always()
       uses: actions/upload-artifact@v4
@@ -42,7 +33,6 @@ jobs:
         name: test-logs
         path: logs/
 
-    
     - name: Upload Test Reports
       if: always()
       uses: actions/upload-artifact@v4
@@ -50,7 +40,6 @@ jobs:
         name: test-reports
         path: report.html
 
-    
     - name: Upload Screenshots on Failure
       if: failure()
       uses: actions/upload-artifact@v4
@@ -58,7 +47,6 @@ jobs:
         name: failure-screenshots
         path: screenshots/
 
-    
     - name: Test Execution Status
       if: always()
       run: echo "Test Execution Completed"
