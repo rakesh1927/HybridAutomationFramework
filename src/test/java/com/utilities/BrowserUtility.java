@@ -87,7 +87,7 @@ public abstract class BrowserUtility {
 		String timeStamp = format.format(date);
 		String updatedFileName = fileName + " - " + timeStamp + ".png";
 		File screenshotData = screenshot.getScreenshotAs(OutputType.FILE);
-		String path = System.getProperty("user.dir")+File.separator+"screenshots"+File.separator+updatedFileName;
+		String path = "./screenshots/"+File.separator+updatedFileName;
 		File screenshotFile = new File(path);
 		try {
 			FileUtils.copyFile(screenshotData, screenshotFile);
