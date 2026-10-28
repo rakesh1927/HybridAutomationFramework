@@ -12,7 +12,7 @@ import com.pojos.Environment;
 public class JSONUtil {
 	public static Environment readJsonFile(Env env) {
 		Gson gson = new Gson();
-		File jsonFile = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\config\\Config.json");
+		File jsonFile = new File(System.getProperty("user.dir") + File.separator + "src" + File.separator + "test" + File.separator + "resources" + File.separator + "config" + File.separator + "Config.json");
 		FileReader fileReader = null;
 		try {
 			fileReader = new FileReader(jsonFile);
