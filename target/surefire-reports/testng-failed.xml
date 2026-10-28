@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Automation Practice Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" parallel="methods" name="UI Automation Test(failed)" verbose="0">
+    <parameter name="isHeadless" value="false"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="isLambdaTest" value="true"/>
+    <classes>
+      <class name="com.ui.tests.LoginTest">
+        <methods>
+          <include name="loginTest" invocation-numbers="1"/>
+          <include name="setup"/>
+          <include name="loginCsvTest" invocation-numbers="1"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.ui.tests.LoginTest -->
+    </classes>
+  </test> <!-- UI Automation Test(failed) -->
+</suite> <!-- Failed suite [Automation Practice Test Suite] -->
